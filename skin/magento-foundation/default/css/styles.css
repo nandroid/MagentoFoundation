@@ -640,7 +640,7 @@ p.required { font-size:11px; text-align:right;  }
 
 .pager .limiter label { vertical-align:middle; }
 .pager .limiter select { }
-.pager .pages { margin:0 140px; }
+.pager .pages { }
 .pager .pages ol { display:inline; }
 .pager .pages li { display:inline; margin:0 2px; }
 .pager .pages .current {}
@@ -650,13 +650,25 @@ p.required { font-size:11px; text-align:right;  }
 .sorter .view-mode { float:left; margin:0; }
 
 .sorter .sort-by label { vertical-align:middle; }
-.sorter .sort-by select {  }
+.sorter .sort-by select { width: 50%; }
+
+
 .sorter .link-feed {}
 
 /* Toolbar */
-.toolbar {clear: both;line-height: 20px;}
+.toolbar {
+	clear: both;
+	line-height: 20px;
+	background: #DDDDDD;
+	margin: 0 0 15px;
+}
+
 .toolbar .pager { padding:3px 0px;  }
+
 .toolbar .sorter { }
+
+.sorter label { display: inline; }
+
 .toolbar-bottom {}
 
 .toolbar label {
@@ -1100,32 +1112,32 @@ header .links li:nth-child(2) a {
 
 /* Category Page ========================================================================= */
 .category-title {
-
-
-
     display: inline;
-
     margin: 0 0 7px;
     padding: 3px 23px 0px 30px;
     position: relative;
-    }
+}
 
 .category-image { width:100%; overflow:hidden; margin:0 0 10px; text-align:center; }
 .category-image img {}
 .category-description { margin:0 0 10px; }
-.category-products {}
+.category-products { }
 
 /* View Type: Grid */
-.products-grid {   position:relative; }
+.products-grid { position:relative; }
 .products-grid.last {  }
 .products-grid li.item { float:left; width:138px; padding:12px 25px 80px; }
-.col3-layout .products-grid li.item { float:left; 
+
+/* Provisional grid */
+.col3-layout .products-grid li.item {
+	float:left; 
 	width:auto;
-	padding:0;
+	padding: 0 15px;
+	width: 33%;
 }
 .products-grid li.item.first { padding-left: 0;}
 .products-grid li.item.last { padding-right: 0;}
-.products-grid .product-image { display:block; width:135px; height:135px; margin:0 0 10px; }
+.products-grid .product-image { display:block;  margin:0 0 15px; }
 
 .products-grid .product-name { }
 
@@ -1134,8 +1146,8 @@ header .links li:nth-child(2) a {
 .products-grid .availability { line-height:21px; }
 
 .col2-left-layout .products-grid,
-.col2-right-layout .products-grid { width:632px; margin:0 auto; }
-.col1-layout .products-grid { width:890px; margin:0 auto; }
+.col2-right-layout .products-grid { margin:0 auto; }
+.col1-layout .products-grid { margin:0 auto; }
 
 /* View Type: List */
 .products-list {float:left;}
