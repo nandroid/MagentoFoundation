@@ -1,24 +1,25 @@
 MagentoFoundation
 =================
-
-
 Foundation framework for Magento.
+
+Completed tasks
+=================
 
 Created minimal template files.
 
 Added foundation.css.
 
-Initial adaption with rows and columns.
-
 Removed fixed widths.
 
-Added some button classes.
+Initial adaption with rows and columns.
 
 1 columns, 2 columns left and right and 3 columns.
 
 Product view prepared for mobile improved order: title, image, add to cart.
 
 Initial responsive header.
+
+Added some button classes.
 
 Improved sidebar modules look and code.
 
