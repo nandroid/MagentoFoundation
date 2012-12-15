@@ -1,6 +1,7 @@
 MagentoFoundation
 =================
 Foundation framework for Magento.
+
 V 1.0 - HTML5 / CSS3 version.
 
 Completed tasks
