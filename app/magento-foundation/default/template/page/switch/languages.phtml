@@ -19,7 +19,7 @@
  * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category    design
- * @package     base_default
+ * @package     magento-foundation_default
  * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
@@ -32,19 +32,17 @@
  */
 ?>
 <?php if(count($this->getStores())>1): ?>
-<div class="row form-language">
-	<div class="ten columns">
-		<select id="select-language" title="<?php echo $this->__('Your Language') ?>" onchange="window.location.href=this.value">
+<div class="form-language">
+
+		<select class="form-header" id="select-language" title="<?php echo $this->__('Your Language') ?>" onchange="window.location.href=this.value">
 			<?php foreach ($this->getStores() as $_lang): ?>
 				<?php $_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? ' selected="selected"' : '' ?>
 				<option value="<?php echo $_lang->getCurrentUrl() ?>"<?php echo $_selected ?>><?php echo $this->htmlEscape($_lang->getName()) ?></option>
 			<?php endforeach; ?>
 		</select>
-	</div>
-	<div class="two columns">
-		<label for="select-language" title="<?php echo $this->__('Your Language:') ?>">
-		
+		<label class=" " for="select-language" title="<?php echo $this->__('Your Language:') ?>">
+		&nbsp;
 		</label>
-	</div>
+
 </div>
 <?php endif; ?>

@@ -29,15 +29,21 @@
 ?>
 <div class="header-container">
     <header class="row header">
-		<div class="logo-box">
+		<div class="six columns">
 			 <h1 class="logo">
-				<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+				<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
 			</h1>
 		</div>
-        <div class="quick-access">
+        <div class="six columns quick-access">
+			<div class="row">
+				<div class="six columns right">
 				<?php echo $this->getChildHtml('topSearch') ?>
+				</div>
+			</div>
 			
 			<?php echo $this->getChildHtml('store_language') ?>
+			
+			<?php echo $this->getChildHtml('topLinks') ?>
 			
 			<!-- <div class="row">
 				<div class="twelve columns">
@@ -51,8 +57,6 @@
         </div>
         <?php echo $this->getChildHtml('topContainer'); ?>
     </header>
-	
-	<?php echo $this->getChildHtml('topLinks') ?>
 </div>
 
 <?php echo $this->getChildHtml('topMenu') ?>

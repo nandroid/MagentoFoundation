@@ -19,7 +19,7 @@
  * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category    design
- * @package     base_default
+ * @package     magento-foundation_default
  * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
@@ -40,31 +40,29 @@
 //]]>
 </script>
 <div class="row block block-poll">
-	<div class="twelve columns">
-		<div class="block-title">
-			<h3><?php echo $this->__('Community Poll') ?></h3>
-		</div>
-		<form id="pollForm" action="<?php echo $action ?>" method="post" onsubmit="return validatePollAnswerIsSelected();">
-			<div class="block-content">
-				<p class="block-subtitle"><?php echo $this->htmlEscape($poll->getPollTitle()); ?></p>
-				<?php if( $poll_answers ): ?>
-				<ul id="poll-answers">
-					<?php foreach( $poll_answers as $answer ): ?>
-					<li>
-						<input type="radio" name="vote" class="radio poll_vote" id="vote_<?php echo $answer->getId() ?>" value="<?php echo $answer->getAnswerId() ?>" />
-						<span class="label"><label for="vote_<?php echo $answer->getId() ?>"><?php echo $this->htmlEscape($answer->getAnswerTitle()) ?></label></span>
-					</li>
-					<?php endforeach; ?>
-				</ul>
-				<script type="text/javascript">decorateList('poll-answers');</script>
-				<?php endif; ?>
-				<div class="actions">
-					<button type="submit" title="<?php echo $this->__('Vote') ?>" class="button small">
-						<?php echo $this->__('Vote') ?>
-					</button>
-				</div>
-			</div>
-		</form>
+	<div class="block-title">
+		<h3><?php echo $this->__('Community Poll') ?></h3>
 	</div>
+	<form id="pollForm" action="<?php echo $action ?>" method="post" onsubmit="return validatePollAnswerIsSelected();">
+		<div class="block-content">
+			<p class="block-subtitle"><?php echo $this->htmlEscape($poll->getPollTitle()); ?></p>
+			<?php if( $poll_answers ): ?>
+			<ul id="poll-answers">
+				<?php foreach( $poll_answers as $answer ): ?>
+				<li>
+					<input type="radio" name="vote" class="radio poll_vote" id="vote_<?php echo $answer->getId() ?>" value="<?php echo $answer->getAnswerId() ?>" />
+					<span class="label"><label for="vote_<?php echo $answer->getId() ?>"><?php echo $this->htmlEscape($answer->getAnswerTitle()) ?></label></span>
+				</li>
+				<?php endforeach; ?>
+			</ul>
+			<script type="text/javascript">decorateList('poll-answers');</script>
+			<?php endif; ?>
+			<div class="actions">
+				<button type="submit" title="<?php echo $this->__('Vote') ?>" class="button medium">
+					<?php echo $this->__('Vote') ?>
+				</button>
+			</div>
+		</div>
+	</form>
 </div>
 <?php endif; ?>

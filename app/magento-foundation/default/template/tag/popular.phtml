@@ -19,27 +19,23 @@
  * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category    design
- * @package     base_default
+ * @package     magento-foundation_default
  * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="footer-container">
-    <footer class="footer">
-		<div class="row">
-			<div class="twelve columns text-center">
-				<?php echo $this->getChildHtml() ?>
-			</div>
-		</div>
-		<div class="row">
-			<div class="six columns centered">
-				<p class="bugs"><?php echo $this->__('Help Us to Keep Magento Healthy') ?> - <a href="http://www.magentocommerce.com/bug-tracking" onclick="this.target='_blank'"><strong><?php echo $this->__('Report All Bugs') ?></strong></a> <?php echo $this->__('(ver. %s)', Mage::getVersion()) ?></p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="twelve columns text-center">
-				<address><?php echo $this->getCopyright() ?></address>
-			</div>
-		</div>
-    </footer>
+<div class="row block block-tags">
+    <div class="block-title">
+        <h3><?php echo $this->__('Popular Tags'); ?></h3>
+    </div>
+    <div class="block-content">
+        <ul class="tags-list">
+            <?php foreach ($this->getTags() as $_tag): ?>
+                <li><a href="<?php echo $_tag->getTaggedProductsUrl() ?>" style="font-size:<?php echo $_tag->getRatio()*70+75 ?>%;"><?php echo $this->htmlEscape($_tag->getName()) ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+        <div class="actions">
+            <a class="button" href="<?php echo $this->getUrl('tag/list') ?>"><?php echo $this->__('View All Tags') ?></a>
+        </div>
+    </div>
 </div>

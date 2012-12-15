@@ -19,7 +19,7 @@
  * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category    design
- * @package     base_default
+ * @package     magento-foundation_default
  * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
@@ -35,27 +35,25 @@
 <?php $_count = is_array($_categories)?count($_categories):$_categories->count(); ?>
 <?php if($_count): ?>
 <div class="row block block-layered-nav">
-	<div class="twelve columns">
-		<div class="block-title">
-			<h3><?php echo $this->__('Browse By') ?></h3>
-		</div>
-		<div class="block-content">
-			<dl id="narrow-by-list2">
-				<dt><?php echo $this->__('Category') ?></dt>
-				<dd>
-					<ol>
-					<?php foreach ($_categories as $_category): ?>
-						<?php if($_category->getIsActive()): ?>
-						<li>
-							<a href="<?php echo $this->getCategoryUrl($_category) ?>"<?php if ($this->isCategoryActive($_category)): ?> class="current"<?php endif; ?>><?php echo $this->htmlEscape($_category->getName()) ?></a> (<?php echo $_category->getProductCount() ?>)
-						</li>
-						<?php endif; ?>
-					<?php endforeach ?>
-					</ol>
-				</dd>
-			</dl>
-			<script type="text/javascript">decorateDataList('narrow-by-list2')</script>
-		</div>
-    </div>
+	<div class="block-title">
+		<h3><?php echo $this->__('Browse By') ?></h3>
+	</div>
+	<div class="block-content">
+		<dl id="narrow-by-list2">
+			<dt><?php echo $this->__('Category') ?></dt>
+			<dd>
+				<ol>
+				<?php foreach ($_categories as $_category): ?>
+					<?php if($_category->getIsActive()): ?>
+					<li>
+						<a href="<?php echo $this->getCategoryUrl($_category) ?>"<?php if ($this->isCategoryActive($_category)): ?> class="current"<?php endif; ?>><?php echo $this->htmlEscape($_category->getName()) ?></a> (<?php echo $_category->getProductCount() ?>)
+					</li>
+					<?php endif; ?>
+				<?php endforeach ?>
+				</ol>
+			</dd>
+		</dl>
+		<script type="text/javascript">decorateDataList('narrow-by-list2')</script>
+	</div>
 </div>
 <?php endif; ?>

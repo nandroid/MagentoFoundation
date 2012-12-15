@@ -19,27 +19,26 @@
  * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category    design
- * @package     base_default
+ * @package     magento-foundation_default
  * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
+/* @var $this Mage_Reports_Block_Product_Viewed */
 ?>
-<div class="footer-container">
-    <footer class="footer">
-		<div class="row">
-			<div class="twelve columns text-center">
-				<?php echo $this->getChildHtml() ?>
-			</div>
-		</div>
-		<div class="row">
-			<div class="six columns centered">
-				<p class="bugs"><?php echo $this->__('Help Us to Keep Magento Healthy') ?> - <a href="http://www.magentocommerce.com/bug-tracking" onclick="this.target='_blank'"><strong><?php echo $this->__('Report All Bugs') ?></strong></a> <?php echo $this->__('(ver. %s)', Mage::getVersion()) ?></p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="twelve columns text-center">
-				<address><?php echo $this->getCopyright() ?></address>
-			</div>
-		</div>
-    </footer>
+<?php if ($_products = $this->getRecentlyViewedProducts()): ?>
+<div class="row block block-list block-viewed">
+    <div class="block-title">
+        <h3><?php echo $this->__('Recently Viewed Products') ?></h3>
+    </div>
+    <div class="block-content">
+        <ol id="recently-viewed-items">
+        <?php foreach ($_products as $_item): ?>
+            <li class="item">
+                <p class="product-name"><a href="<?php echo $this->getProductUrl($_item) ?>"><?php echo $this->helper('catalog/output')->productAttribute($_item, $_item->getName() , 'name') ?></a></p>
+            </li>
+        <?php endforeach; ?>
+        </ol>
+        <script type="text/javascript">decorateList('recently-viewed-items');</script>
+    </div>
 </div>
+<?php endif; ?>
