@@ -824,6 +824,8 @@ header .quick-access {
 	padding: 0 15px;
 }
 
+
+
 @media only screen and (max-width: 767px) {
 
 	header .quick-access {
@@ -833,6 +835,10 @@ header .quick-access {
 	.form-search button.button {
 		width: auto !important;
 		padding: 10px 20px 11px;
+	}
+	
+	aside {
+		clear:both;
 	}
 
 }
