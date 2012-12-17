@@ -824,6 +824,10 @@ header .quick-access {
 	padding: 0 15px;
 }
 
+.banner-cat img, .category-image img {
+	width: 100% !important;
+}
+
 
 
 @media only screen and (max-width: 767px) {
@@ -839,6 +843,14 @@ header .quick-access {
 	
 	aside {
 		clear:both;
+	}
+	
+	.column, .columns {
+		width:100% !important;
+	}
+	
+	.col3-layout .col-main {
+		padding: 0 !important;
 	}
 
 }
@@ -989,6 +1001,7 @@ header .form-language select.flags option { background-position:4px 50%; backgro
 .block {
 	margin:0 0 15px !important;
 	border: 1px solid #ccc;
+	clear: both;
 }
 .block .block-title {
 	
@@ -1180,7 +1193,10 @@ aside h3 {
 .block-reorder .validation-advice { margin:3px 9px 7px; }
 
 /* Block: Banner */
-.block-banner { border:0; }
+.block-banner {
+	border:0;
+}
+
 .block-banner .block-content { padding:0; text-align:center; }
 
 /* Block: Login */

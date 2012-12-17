@@ -33,7 +33,7 @@
 ?>
 <?php if($this->getCollection()->getSize()): ?>
 <div class="toolbar">
-    <div class="row pager">
+    <div class="pager">
 		<div class="four columns">
 			<p class="amount">
 				<?php if($this->getLastPageNum()>1): ?>
@@ -62,7 +62,7 @@
 
 
     <?php if( $this->isExpanded() ): ?>
-    <div class="row sorter">
+    <div class="sorter">
         <?php if( $this->isEnabledViewSwitcher() ): ?>
 			<div class="six columns">
 				<p class="view-mode">

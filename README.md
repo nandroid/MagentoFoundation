@@ -13,7 +13,9 @@ Minimal template files created.
 
 Added foundation.css.
 
-Added necessary CSS to review.
+Added necessary Magento CSS.
+
+Removed fixed widths.
 
 Basic layout with rows and columns.
 
