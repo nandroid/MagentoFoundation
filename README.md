@@ -2,9 +2,11 @@
 Magento Foundation
 ==================
 
-Foundation framework for Magento.
+Foundation V3 framework for Magento 1.7.
 
-V 1.0 - HTML5 / CSS3 version.
+Magento Foundation V 1.1 - HTML5 / CSS3 version.
+
+Demo page: http://magendation.internetized.net/
 
 Completed Tasks
 ===============
@@ -28,6 +30,10 @@ Clean and cool sidebar modules.
 Initial responsive header.
 
 Some button styles.
+
+Cart and Checkout adaption.
+
+Customer account adaption.
 
 Help needed with JavaScript!
 ============================
