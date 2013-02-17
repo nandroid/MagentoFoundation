@@ -46,7 +46,10 @@
     </div>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <?php echo $this->getChildHtml('form_before') ?>
+	
+	<div class="overflow">
     <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
+
         <fieldset>
             <table id="shopping-cart-table" class="data-table cart-table">
                 <col width="1" />
@@ -141,7 +144,8 @@
             <script type="text/javascript">decorateTable('shopping-cart-table')</script>
         </fieldset>
     </form>
-    <div class="cart-collaterals">
+    </div>
+		<div class="cart-collaterals">
 	        <div class="three columns totals">
             <?php echo $this->getChildHtml('totals'); ?>
             <?php if(!$this->hasError()): ?>

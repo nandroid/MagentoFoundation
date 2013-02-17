@@ -24,27 +24,18 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="block block-account">
-    <div class="block-title">
-        <h3><?php echo $this->__('My Account'); ?></h3>
-    </div>
-    <div class="block-content">
-        <ul>
-            <?php $_links = $this->getLinks(); ?>
-            <?php $_index = 1; ?>
-            <?php $_count = count($_links); ?>
-            <?php foreach ($_links as $_link): ?>
-                <?php $_last = ($_index++ >= $_count); ?>
-                <?php if ($this->isActive($_link)): ?>
-                    <li class="current<?php echo ($_last ? ' last' : '') ?>">
-						<strong><?php echo $_link->getLabel() ?></strong>
-					</li>
-                <?php else: ?>
-                    <li<?php echo ($_last ? ' class="last"' : '') ?>><a href="<?php echo $_link->getUrl() ?>">
-						<?php echo $_link->getLabel() ?></a>
-					</li>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </ul>
-    </div>
+
+<?php  $_order = $this->getOrder() ?>
+<div class="title-links">
+	<?php if($this->helper('rss/order')->isStatusNotificationAllow()): ?>
+		<a href="<?php echo $this->helper('rss/order')->getStatusHistoryRssUrl($_order) ?>" class="link-rss f-none">
+			<?php echo $this->__('Subscribe to Order Status') ?></a>
+		<span class="separator">|</span>
+	<?php endif; ?>
+	<?php if ($this->helper('sales/reorder')->canReorder($_order)) : ?>
+		<a href="<?php echo $this->getReorderUrl($_order) ?>" class="link-reorder"><?php echo $this->__('Reorder') ?></a>
+		<span class="separator">|</span>
+	<?php endif ?>
+	<a href="<?php echo $this->getPrintUrl($_order) ?>" class="link-print" onclick="this.target='_blank';"><?php echo $this->__('Print Order') ?></a>
+	<?php echo $this->getChildHtml(); ?>
 </div>

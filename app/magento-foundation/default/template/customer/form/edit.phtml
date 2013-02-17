@@ -31,13 +31,17 @@
 <form action="<?php echo $this->getUrl('customer/account/editPost') ?>" method="post" id="form-validate">
     <div class="fieldset">
         <?php echo $this->getBlockHtml('formkey')?>
-        <h2 class="legend"><?php echo $this->__('Account Information') ?></h2>
+        <h2 class="legend">
+			<?php echo $this->__('Account Information') ?>
+		</h2>
         <ul class="form-list">
             <li class="fields">
                 <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getCustomer())->toHtml() ?>
             </li>
             <li>
-                <label for="email" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
+                <label for="email" class="required">
+					<em>*</em><?php echo $this->__('Email Address') ?>
+				</label>
                 <div class="input-box">
                     <input type="text" name="email" id="email" value="<?php echo $this->htmlEscape($this->getCustomer()->getEmail()) ?>" title="<?php echo $this->__('Email Address') ?>" class="input-text required-entry validate-email" />
                 </div>
@@ -55,7 +59,8 @@
             <li><?php echo $_gender->setGender($this->getCustomer()->getGender())->toHtml() ?></li>
         <?php endif ?>
             <li class="control">
-                <input type="checkbox" name="change_password" id="change_password" value="1" onclick="setPasswordForm(this.checked)" title="<?php echo $this->__('Change Password') ?>"<?php if($this->getCustomer()->getChangePassword()==1): ?> checked="checked"<?php endif; ?> class="checkbox" /><label for="change_password"><?php echo $this->__('Change Password') ?></label>
+                <input type="checkbox" name="change_password" id="change_password" value="1" onclick="setPasswordForm(this.checked)" title="<?php echo $this->__('Change Password') ?>"<?php if($this->getCustomer()->getChangePassword()==1): ?> checked="checked"<?php endif; ?> class="checkbox" />
+				<label for="change_password"><?php echo $this->__('Change Password') ?></label>
             </li>
         </ul>
     </div>
@@ -86,8 +91,14 @@
     </div>
     <div class="buttons-set">
         <p class="required"><?php echo $this->__('* Required Fields') ?></p>
-        <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
-        <button type="submit" title="<?php echo $this->__('Save') ?>" class="button"><span><span><?php echo $this->__('Save') ?></span></span></button>
+        <p class="back-link">
+			<a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>">
+				<small>&laquo; </small><?php echo $this->__('Back') ?>
+			</a>
+		</p>
+        <button type="submit" title="<?php echo $this->__('Save') ?>" class="button">
+			<?php echo $this->__('Save') ?>
+		</button>
     </div>
 </form>
 <script type="text/javascript">

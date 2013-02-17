@@ -28,16 +28,15 @@
 /**
  * Customer login form template
  *
- * @see Mage_Customer_Block_Form_Login
+ * @see app/design/frontend/base/default/template/customer/form/login.phtml
  */
+/** @var $this Mage_Customer_Block_Form_Login */
 ?>
 <div class="account-login">
     <div class="page-title">
         <h1><?php echo $this->__('Login or Create an Account') ?></h1>
     </div>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
-    <?php /* Extensions placeholder */ ?>
-    <?php echo $this->getChildHtml('customer.form.login.extra')?>
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form">
         <div class="col2-set">
             <div class="col-1 new-users">
@@ -46,7 +45,8 @@
                     <p><?php echo $this->__('By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.') ?></p>
                 </div>
 				<div class="buttons-set">
-                    <button type="button" title="<?php echo $this->__('Create an Account') ?>" class="button" onclick="window.location='<?php echo $this->getCreateAccountUrl() ?>';"><span><span><?php echo $this->__('Create an Account') ?></span></span></button>
+                    <button type="button" title="<?php echo $this->__('Create an Account') ?>" class="button" onclick="window.location='<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>';">
+						<?php echo $this->__('Create an Account') ?></button>
                 </div>
             </div>
             <div class="col-2 registered-users">
@@ -67,16 +67,22 @@
                             </div>
                         </li>
                         <?php echo $this->getChildHtml('form.additional.info'); ?>
+                        <?php echo $this->getChildHtml('persistent.remember.me'); ?>
                     </ul>
+                    <?php echo $this->getChildHtml('persistent.remember.me.tooltip'); ?>
                     <p class="required"><?php echo $this->__('* Required Fields') ?></p>
                 </div>
 				<div class="buttons-set">
                     <a href="<?php echo $this->getForgotPasswordUrl() ?>" class="f-left"><?php echo $this->__('Forgot Your Password?') ?></a>
-                    <button type="submit" class="button" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
+                    <button type="submit" class="button" title="<?php echo $this->__('Login') ?>" name="send" id="send2">
+						<?php echo $this->__('Login') ?></button>
                 </div>
             </div>
         </div>
 
+        <?php if (Mage::helper('checkout')->isContextCheckout()): ?>
+            <input name="context" type="hidden" value="checkout" />
+        <?php endif; ?>
     </form>
     <script type="text/javascript">
     //<![CDATA[

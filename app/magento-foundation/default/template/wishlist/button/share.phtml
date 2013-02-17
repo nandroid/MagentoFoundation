@@ -24,27 +24,9 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="block block-account">
-    <div class="block-title">
-        <h3><?php echo $this->__('My Account'); ?></h3>
-    </div>
-    <div class="block-content">
-        <ul>
-            <?php $_links = $this->getLinks(); ?>
-            <?php $_index = 1; ?>
-            <?php $_count = count($_links); ?>
-            <?php foreach ($_links as $_link): ?>
-                <?php $_last = ($_index++ >= $_count); ?>
-                <?php if ($this->isActive($_link)): ?>
-                    <li class="current<?php echo ($_last ? ' last' : '') ?>">
-						<strong><?php echo $_link->getLabel() ?></strong>
-					</li>
-                <?php else: ?>
-                    <li<?php echo ($_last ? ' class="last"' : '') ?>><a href="<?php echo $_link->getUrl() ?>">
-						<?php echo $_link->getLabel() ?></a>
-					</li>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-</div>
+
+<?php if($this->getWishlist()->getItemsCount()): ?>
+    <button type="submit" name="save_and_share" title="<?php echo $this->__('Share Wishlist') ?>" class="button btn-share">
+		<?php echo $this->__('Share Wishlist') ?>
+	</button>
+<?php endif;?>

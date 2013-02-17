@@ -27,13 +27,15 @@
 <div class="footer-container">
     <footer class="footer">
 		<div class="row">
-			<div class="twelve columns text-center">
+			<div class="twelve columns centered text-center">
 				<?php echo $this->getChildHtml() ?>
 			</div>
 		</div>
 		<div class="row">
-			<div class="six columns centered">
-				<p class="bugs"><?php echo $this->__('Help Us to Keep Magento Healthy') ?> - <a href="http://www.magentocommerce.com/bug-tracking" onclick="this.target='_blank'"><strong><?php echo $this->__('Report All Bugs') ?></strong></a> <?php echo $this->__('(ver. %s)', Mage::getVersion()) ?></p>
+			<div class="six columns centered text-center">
+				<p class="bugs">
+				<?php echo $this->__('Help Us to Keep Magento Healthy') ?> - <a href="http://www.magentocommerce.com/bug-tracking" onclick="this.target='_blank'"><strong><?php echo $this->__('Report All Bugs') ?></strong></a> <?php echo $this->__('(ver. %s)', Mage::getVersion()) ?>
+				</p>
 			</div>
 		</div>
 		<div class="row">
