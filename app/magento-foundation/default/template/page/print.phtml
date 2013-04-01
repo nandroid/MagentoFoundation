@@ -42,25 +42,21 @@
 <head>
 	<?php echo $this->getChildHtml('head') ?>
 </head>
-<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
-<?php echo $this->getChildHtml('after_body_start') ?>
-<div class="wrapper">
-    <?php echo $this->getChildHtml('global_notices') ?>
-    <div class="page">
-        <?php echo $this->getChildHtml('header') ?>
-        <div class="main-container col1-layout">
-            <div class="main">
-                <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div class="twelve columns col-main">
-                    <?php echo $this->getChildHtml('global_messages') ?>
-                    <?php echo $this->getChildHtml('content') ?>
-                </div>
-            </div>
-        </div>
-        <?php echo $this->getChildHtml('footer') ?>
-        <?php echo $this->getChildHtml('before_body_end') ?>
+<body class="page-print<?php echo $this->getBodyClass()?$this->getBodyClass():'' ?>">
+<div>
+    <div class="print-head">
+        <img src="<?php echo $this->getPrintLogoUrl() ? $this->getPrintLogoUrl() : $this->getSkinUrl('images/logo_print.gif') ?>" class="logo" alt="" />
+        <?php if ($this->getPrintLogoText()):?>
+            <address><?php echo nl2br($this->htmlEscape($this->getPrintLogoText())) ?></address>
+        <?php endif;?>
     </div>
+    <?php echo $this->getChildHtml('content') ?>
+    <div class="buttons-set">
+        <button type="button" title="<?php echo $this->__('Close Window') ?>" class="button" onclick="window.close();">
+			<?php echo $this->__('Close Window') ?>
+		</button>
+    </div>
+    <?php echo $this->getAbsoluteFooter() ?>
 </div>
-<?php echo $this->getAbsoluteFooter() ?>
 </body>
 </html>

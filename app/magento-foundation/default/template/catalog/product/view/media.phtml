@@ -35,12 +35,12 @@
     $_helper = $this->helper('catalog/output');
 ?>
 <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
-<p class="product-image product-image-zoom">
+<div class="product-image product-image-zoom">
     <?php
         $_img = '<img id="image" src="'.$this->helper('catalog/image')->init($_product, 'image').'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
         echo $_helper->productAttribute($_product, $_img, 'image');
     ?>
-</p>
+</div>
 <p class="zoom-notice" id="track_hint"><?php echo $this->__('Double click on above image to view full picture') ?></p>
 <div class="zoom">
     <img id="zoom_out" src="<?php echo $this->getSkinUrl('images/slider_btn_zoom_out.gif') ?>" alt="<?php echo $this->__('Zoom Out') ?>" title="<?php echo $this->__('Zoom Out') ?>" class="btn-zoom-out" />
