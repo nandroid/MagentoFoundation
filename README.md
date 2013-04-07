@@ -1,47 +1,53 @@
 
-Magento Foundation
-==================
+Magento Foundation 3 Framework
+==============================
 
-Foundation V3 framework for Magento 1.7.
+Zurb Foundation 3 framework for Magento 1.7.
 
-Magento Foundation V 1.1 - HTML5 / CSS3 version.
+Magento Foundation 3 Version 1.3.0.
 
 Demo page: http://magendation.internetized.net/
 
-Completed Tasks
-===============
+Magento Connect: http://www.magentocommerce.com/magento-connect/catalog/product/view/id/16399/
+You can see screenshots in the Magento Connect gallery.
 
-Minimal template files created.
+Features
+========
 
-Added foundation.css.
+Minimal Magento template required files.
 
-Added necessary Magento CSS.
+Foundation CSS an JS files included.
 
-Removed fixed widths.
+Basic Magento required styles in styles.css.
 
-Basic layout with rows and columns.
-
-1 column, 2 columns left and right, 3 columns.
+Removed fixed widths. Fluid layout.
 
 Product view improved for mobile: Title, image, add to cart.
 
 Clean and cool sidebar modules.
 
-Initial responsive header.
+Icon fonts for Cart, Wishlist, Compare, Remove,...
 
-Some button styles.
+Cart, Checkout and Customer account.
 
-Cart and Checkout adaption.
+Left and Right Off-canvas sidebar columns.
 
-Customer account adaption.
+Top Nav with mini-cart hides Search, Language and Top Links.
 
-Help needed with JavaScript!
-============================
 
-We need help to load jQuery and JavaScript libraries from Foundation, without breaking the core Magento functionality with MooTools.
+Roadmap
+=======
 
-We are interested in use OffCanvas with menu and sidebar.
+Mobile menu.
 
-And replace the Product zoom and More views with Clearing Gallery.
+Orbit Slider.
+
+Accordion in sidebar modules.
+
+Clearings Gallery for image product.
+
+Reveal for every pop-ups.
+
+We need help with JavaScript stuff!
 
 
