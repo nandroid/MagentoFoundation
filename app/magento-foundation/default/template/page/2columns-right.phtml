@@ -51,13 +51,21 @@
         <div class="main-container col2-right-layout">
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div class="nine columns col-main">
+                <section role="main" class="col-main">
+				
+					<div class="show-for-small off-canvas-buttons">
+						<ul class="">
+							<li class="last"><a title="Right Sidebar" href="#" id="sidebarRightButton" class="off-canvas-right"> </a></li>
+						</ul>
+					</div>
+					
                     <?php echo $this->getChildHtml('global_messages') ?>
                     <?php echo $this->getChildHtml('content') ?>
-                </div>
-                <aside class="three columns col-right">
+					
+                </section>
+                <section id="sidebar" role="complementary" class="col-right">
 					<?php echo $this->getChildHtml('right') ?>
-				</aside>
+				</section>
             </div>
         </div>
         <?php echo $this->getChildHtml('footer') ?>
@@ -67,3 +75,27 @@
 <?php echo $this->getAbsoluteFooter() ?>
 </body>
 </html>
+
+<script type="text/javascript" >
+
+    ;(function (window, document, $) {
+	
+        var $selector1 = $('#topMenu'),
+                events = 'click.fndtn';
+        if ($selector1.length > 0) $selector1.css("margin-top", $selector1.height() * -1);
+		
+		// Waiting for click to show the Right sidebar
+        var $selector3 = $('#sidebarRightButton');
+        if ($selector3.length > 0) {
+            $('#sidebarRightButton').on(events, function (e) {
+                e.preventDefault();
+                $('body').toggleClass('active-right');
+            });
+        }
+    }
+	(this, document, jQuery.noConflict()));
+
+</script>
+
+
+

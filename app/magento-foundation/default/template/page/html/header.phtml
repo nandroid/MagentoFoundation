@@ -31,28 +31,54 @@
     <header class="row header">
 		<div class="logo-box">
 			 <h1 class="logo">
-				<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+				<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>">
+					<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+				</a>
 			</h1>
 		</div>
-        <div class="quick-access">
-				<?php echo $this->getChildHtml('topSearch') ?>
+		<nav class="top-bar">
+			<ul>
+				<li class="toggle-topbar">
+					<a href="#"></a>
+				</li>
+				<li class="mini-cart">
+				
+					<?php
+						$count = $this->helper('checkout/cart')->getSummaryCount();  
+						$total = $this->helper('checkout/cart')->getQuote()->getGrandTotal(); 
+					?>
+					
+					<?php if($count == 0):?>
+						<?php echo $this->__('0 Items', $count) ?>
+					<?php endif; ?>
+					
+					<?php if($count == 1):?>
+						<?php echo $this->__('1 Item', $count) ?>
+					<?php endif; ?>
+					
+					<?php if($count >= 2):?>
+						<?php echo $this->__('%s Items', $count) ?>
+					<?php endif; ?>
+					<a title="<?php echo $this->__('Checkout') ?>"  href="<?php echo $this->getUrl('checkout') ?>">
+						<?php echo $this->helper('checkout')->formatPrice(Mage::getSingleton('checkout/cart')->getQuote()->getGrandTotal()); ?>
+					</a>
+					<a class="cart-header" title="<?php echo $this->__('My Cart') ?>" href="<?php echo $this->getUrl('checkout/cart') ?>">
+						
+					</a>
+				</li>
+			</ul>
 			
-			<?php echo $this->getChildHtml('store_language') ?>
-			
-			<!-- <div class="row">
-				<div class="twelve columns">
-					<p class="welcome-msg">
-						<?php //echo $this->getWelcome() ?>
-						<?php //echo $this->getAdditionalHtml() ?>
-					</p>
+			<section>
+				<div class="quick-access">
+					<?php echo $this->getChildHtml('topSearch') ?>
+					<?php echo $this->getChildHtml('store_language') ?>
 				</div>
-			</div> -->
-			
-        </div>
-        <?php echo $this->getChildHtml('topContainer'); ?>
-    </header>
-	
-	<?php echo $this->getChildHtml('topLinks') ?>
-</div>
+				
+				<?php echo $this->getChildHtml('topContainer'); ?>
+				<?php echo $this->getChildHtml('topLinks') ?>
+			</section>
+		</nav>
 
-<?php echo $this->getChildHtml('topMenu') ?>
+		<?php echo $this->getChildHtml('topMenu') ?>
+	</header>
+</div>

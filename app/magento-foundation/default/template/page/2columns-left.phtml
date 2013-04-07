@@ -32,17 +32,21 @@
 <!DOCTYPE html>
 
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="<?php echo $this->getLang() ?>"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="<?php echo $this->getLang() ?>"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="<?php echo $this->getLang() ?>"> <![endif]-->
-<!--[if gt IE 8]><!-->
+<!--[if lt IE 7 ]> <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="<?php echo $this->getLang() ?>" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php echo $this->getLang() ?>" class="no-js"> <!--<![endif]-->
+
 <html lang="<?php echo $this->getLang() ?>">
 <!--<![endif]-->
 
 <head>
 <?php echo $this->getChildHtml('head') ?>
 </head>
+
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+
 <?php echo $this->getChildHtml('after_body_start') ?>
 <div class="wrapper">
     <?php echo $this->getChildHtml('global_notices') ?>
@@ -51,13 +55,20 @@
         <div class="main-container col2-left-layout">
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div class="nine columns col-main">
+                <section role="main" class="">
+				
+					<div class="show-for-small off-canvas-buttons">
+						<ul class="">
+							<li><a title="Left Sidebar" href="#" id="sidebarLeftButton" class="off-canvas-left"> </a></li>
+						</ul>
+					</div>
+
                     <?php echo $this->getChildHtml('global_messages') ?>
                     <?php echo $this->getChildHtml('content') ?>
-                </div>
-                <aside class="three columns col-left sidebar">
+                </section>
+                <section id="sidebar" role="complementary" class="col-left">
 					<?php echo $this->getChildHtml('left') ?>
-				</aside>
+				</section>
             </div>
         </div>
         <?php echo $this->getChildHtml('footer') ?>
@@ -67,3 +78,26 @@
 <?php echo $this->getAbsoluteFooter() ?>
 </body>
 </html>
+
+<!-- nando. added script for class active on body -->
+
+<script type="text/javascript" >
+
+    ;(function (window, document, $) {
+
+        var $selector1 = $('#topMenu'),
+                events = 'click.fndtn';
+        if ($selector1.length > 0) $selector1.css("margin-top", $selector1.height() * -1);
+
+        // Waiting for click to show the Left sidebar
+        var $selector2 = $('#sidebarLeftButton');
+        if ($selector2.length > 0) {
+            $('#sidebarLeftButton').on(events, function (e) {
+                e.preventDefault();
+                $('body').toggleClass('active-left');
+            });
+        }
+    }
+	(this, document, jQuery.noConflict()));
+
+</script>
