@@ -29,17 +29,28 @@
 ?>
 <div class="header-container">
     <header class="row header">
-		<div class="logo-box">
-			 <h1 class="logo">
-				<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>">
-					<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
-				</a>
-			</h1>
+
+		 <h1 class="logo">
+			<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>">
+				<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+			</a>
+		</h1>
+			
+		<div class="quick-access">
+			<?php echo $this->getChildHtml('topSearch') ?>
+			<?php echo $this->getChildHtml('topLinks') ?>
 		</div>
+
 		<nav class="top-bar">
 			<ul>
 				<li class="toggle-topbar">
-					<a href="#"></a>
+					<a class="menu-button" href="#" alt="Menu">
+					  <svg width="30" height="20">
+						<path d="M0,2 20,2" stroke="#fff" stroke-width="2"/>
+						<path d="M0,10 20,10" stroke="#fff" stroke-width="2"/>
+						<path d="M0,18 20,18" stroke="#fff" stroke-width="2"/>
+					  </svg>
+					</a>
 				</li>
 				<li class="mini-cart">
 				
@@ -69,16 +80,11 @@
 			</ul>
 			
 			<section>
-				<div class="quick-access">
-					<?php echo $this->getChildHtml('topSearch') ?>
-					<?php echo $this->getChildHtml('store_language') ?>
-				</div>
+				<?php echo $this->getChildHtml('catalog_footernav') ?>
 				
-				<?php echo $this->getChildHtml('topContainer'); ?>
-				<?php echo $this->getChildHtml('topLinks') ?>
 			</section>
 		</nav>
-
 		<?php echo $this->getChildHtml('topMenu') ?>
+
 	</header>
 </div>

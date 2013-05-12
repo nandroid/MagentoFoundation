@@ -232,30 +232,46 @@ body{ padding: 0; margin: 0; overflow: hidden; }
 
 /* Top Nav */
 
-.header-container .top-bar ul > li.toggle-topbar {
+.top-bar ul > li.toggle-topbar {
     float: left;
-    position: relative;
+    position: relative!important;
     width: 50px;
 }
 
-.header-container .top-bar ul > li a:not(.button) {
+.top-bar ul > li.toggle-topbar a {
+	border-width:0!important;
+	height: 40px !important;
+	bottom: auto!important;
+	top:5px!important;
+    width: 40px !important;
+}
+
+
+.top-bar ul > li a:not(.button) {
     display: inline!important;
-	right: 15px;
+	left: 15px;
+	top:0;
+	margin:0!important;
 }
 
-.header-container .top-bar ul.links > li {
-    float: left;
+.top-bar ul > li.toggle-topbar {
+    height: 0px!important;
+	margin:0!important;
 }
 
-.header-container .top-bar li.mini-cart {
+.top-bar ul.links {
+	padding: 0!important;
+	height: auto;
+}
+
+.top-bar ul.links > li {
+    float: right;
+}
+
+.top-bar li.mini-cart {
 	text-align: right;
 	display:none;
 	color: #fff;
-}
-
-.header-container .top-bar ul.links {
-	padding: 0!important;
-	height: auto;
 }
 
 .header-container .price {
@@ -284,33 +300,26 @@ header .logo {
 	margin: 15px 0 0 30px;
 }
 
-header.logo-box { display:inline-block; }
-
 header .quick-access {
     display: inline-block;
     float: right;
 	padding: 15px 15px 0;
 }
 
-.form-language select {
-    background-color: white;
-    border: 1px solid #CCCCCC;
-    border-radius: 2px 2px 2px 2px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
-    color: rgba(0, 0, 0, 0.75);
-    display: block;
-    font-family: inherit;
-    font-size: 14px;
-    height: 32px;
-    margin: 0 0 12px;
-    padding: 6px;
-    transition: all 0.15s linear 0s;
-    width: 100%;
+.form-language {
+	margin: 0 auto;
+	height: 40px;
 }
 
-.header-container .links { float:right; margin-right:30px; }
+.form-language select {
+    width: auto;
+	float: right;
+	margin:0 0 0 10px;
+}
 
-.links li {
+.header-container .links { float:right; margin-right:15px; clear: right; }
+
+.header-container .links li {
 	float:left;
 	padding:0;
 }
@@ -325,6 +334,11 @@ header .quick-access {
 }
 
 header .welcome-msg { margin:0;  text-align:right; }
+
+.search-mini-form  {
+		float: right;
+	}
+	
 header .form-search label { float:left; text-align:left; text-indent:-999em; overflow:hidden;display:none; }
 header .form-search input.input-text, header .form-language select { width: auto; float:left; }
 
@@ -336,7 +350,7 @@ header .form-search input.input-text, header .form-language select { width: auto
 header .form-language label, header .form-search button.btn-search {
 	vertical-align:middle;
 	padding: 5px 10px!important;
-	float:left;
+	float:left; 
 	box-shadow: none !important;
 	line-height:24px;
 }
@@ -353,11 +367,16 @@ header .form-language { clear:both; padding:5px 0 0; text-align:right; float: ri
 
 .header-container .top-bar {
     background: none;
+	overflow: visible;
+	height:130px;
+	margin:0;
 }
+
+
 
 @media only screen and (max-width: 800px) {
 
-	.header-container .top-bar { background: none repeat scroll 0 0 #222222; }
+	.header-container .top-bar { background: none repeat scroll 0 0 #222222; height: 45px; overflow: hidden; }
 
 	.header-container .top-bar li.mini-cart {
 		display: block;
@@ -365,7 +384,7 @@ header .form-language { clear:both; padding:5px 0 0; text-align:right; float: ri
 	
 	.header-container .links { margin-right: 0; }
 	
-	.header-container .top-bar ul.links { padding: 0 0 15px 15px!important; }
+	.header-container .top-bar ul.links { padding: 0 15px 0 15px!important; }
 	
 }
 
@@ -402,7 +421,7 @@ header .form-language { clear:both; padding:5px 0 0; text-align:right; float: ri
    ========================================================================== */
 
 .btn-cart:before, .form-search .button:before, .form-language label:before, .product-view .box-tags .form-add .input-box:before, .btn-remove:before, .btn-remove2:before, .dashboard .box-recent .box-head h2:before, .dashboard .box-info .box-head h2:before, .new-users h2:before, .registered-users h2:before,
-.error-msg:before, .success-msg:before, .note-msg:before, .notice-msg:before, .arrow-up:before, .arrow-down:before, .mini-products-list .link-cart:before, .link-wishlist:before, .link-compare:before, .validation-advice:before, .opc .step-title a:before, .back-link a:before, .block-layered-nav .currently .label:before, .i-next:before,.i-previous:before, .cart-header:before, .off-canvas-left:before, .off-canvas-right:before  {
+.error-msg:before, .success-msg:before, .note-msg:before, .notice-msg:before, .arrow-up:before, .arrow-down:before, .mini-products-list .link-cart:before, .link-wishlist:before, .link-compare:before, .validation-advice:before, .opc .step-title a:before, .back-link a:before, .block-layered-nav .currently .label:before, .i-next:before,.i-previous:before, .cart-header:before, .off-canvas-left:before, .off-canvas-right:before {
 	font-family: "GeneralFoundicons";
 	color: #2BA6CB;
 	font-size:48px;
@@ -452,6 +471,7 @@ button.btn-cart:hover, .btn-remove:hover:before, .arrow-up:hover:before, .arrow-
 .form-language label:before {
 	content: "\f027";
 	font-size:24px;
+	float: right;
 }
 
 .product-view .box-tags .form-add .input-box:before { float:left;  margin:0 15px 0 0;
@@ -503,9 +523,9 @@ button.btn-cart:hover, .btn-remove:hover:before, .arrow-up:hover:before, .arrow-
 .error-msg { background-color: #C60F13; }
 .error-msg:before { content: "\f006"; color:#fff; }
 .success-msg { background-color: #5DA423; }
-.success-msg:before { content: "\f005"; color:#fff; }
+.success-msg:before { content: "\f005"; color:#fff; float: left; }
 .note-msg, .notice-msg { background-color: #2BA6CB;  }
-.note-msg:before, .notice-msg:before { content: "\f022"; color:#fff; }
+.note-msg:before, .notice-msg:before { content: "\f022"; color:#fff; float: left; }
 
 .arrow-up:before, .arrow-down:before { font-size:20px; }
 .arrow-up:before { content: "\f016"; }
@@ -1210,10 +1230,11 @@ p.required { font-size:1em; text-align:right; }
 
 /* Global Messages  */
 
-.messages,
-.messages ul { list-style: none !important; margin: 0 !important; padding: 0 !important; display: inline-block; }
+.messages { margin: 0 0 20px 0; }
+
+.messages ul { list-style: none !important; margin: 0 !important; padding: 0 !important; }
 .messages { width: 100%; clear: both; }
-.messages li li { margin: 0 0 5px !important; font-size: 1.4em; }
+.messages li li { font-size: 1.4em; }
 
 /* =============================================================================
    Tables
@@ -1423,7 +1444,7 @@ form#shipping-zip-form { margin-bottom: 0; }
 .opc .step-title h2 {
 	float:left;
 	margin:7px;
-	font-size:1.4em;
+	font-size:1.3em!important;
 }
 
 #opc-login h3 {
@@ -1600,13 +1621,11 @@ footer .store-switcher select { padding:0; vertical-align:middle; }
 footer address { margin:0 0 10px; }
 
 footer ul {
-	clear: both;
-    display: inline-block;
-    margin: 8px auto;
+
 }
 
 footer ul.links { display: inline-block; }
-footer ul li { float:left; }
+footer ul li { display: inline; }
 
 footer .links li a.button, footer .links li a , footer li a {
 	border-right: 1px solid #DDDDDD!important;
@@ -1692,7 +1711,9 @@ footer li.last { background:none !important; padding-right:0 !important; border-
 	
 	.product-view .product-shop { padding:0!important; }
 	
-	header .logo { margin: 0 0 15px 15px; }
+	.header-container .top-bar {  display: block; }
+	
+	header .logo { margin: 0 0 0 15px; }
 	
 	header .quick-access { width: 100%; }
 	
@@ -1705,21 +1726,26 @@ footer li.last { background:none !important; padding-right:0 !important; border-
 	
 	.search-mini-form  {
 		float: left;
-		width: 50%;
 		margin:0;
+		width: 50%;
 	}
 	
-	header .form-search input.input-text, header .form-language select  {
+	header .form-search input.input-text  {
 		float: left;
 		margin: 0 0 10px;
-		width: 50%;
+		width:65%;
+	}
+
+	.quick-access .links li  {
+		display: none;
 	}
 	
-	header .form-language {
-		clear: none;
-		padding:0;
+	.quick-access .links li.first, .quick-access .links li.last	{
+		display: block;
 	}
 	
+	.breadcrumbs { padding: 10px 15px 10px 0; }
+		
 	.page-title { margin: 0; }
 	
 	#nav a { padding: 10px 12px; }

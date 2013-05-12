@@ -53,7 +53,7 @@ Default layout, loads most of the pages
             </block>
         </reference>
         <reference name="right">
-            <block type="catalog/product_compare_sidebar" before="cart_sidebar" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>
+            <block type="catalog/product_compare_sidebar" after="cart_sidebar" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>
             <block type="core/template" name="right.permanent.callout" template="callouts/right_col.phtml">
                 <action method="setImgSrc"><src>images/media/col_right_callout.jpg</src></action>
                 <action method="setImgAlt" translate="alt" module="catalog"><alt>Keep your eyes open for our special Back to School items and save A LOT!</alt></action>
@@ -63,6 +63,12 @@ Default layout, loads most of the pages
             <action method="addLink" translate="label title" module="catalog" ifconfig="catalog/seo/site_map"><label>Site Map</label><url helper="catalog/map/getCategoryUrl" /><title>Site Map</title></action>
         </reference>
         <block type="catalog/product_price_template" name="catalog_product_price_template" />
+		
+		<!-- Menu mobile --> 
+		<reference name="header">
+        	<block type="catalog/navigation" name="catalog_footernav" template="catalog/navigation/mobile-menu.phtml" before="-" />
+        </reference>
+		
     </default>
 
 
