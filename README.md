@@ -34,11 +34,11 @@ Left and Right Off-canvas sidebar columns.
 
 Top Nav with mini-cart hides Search, Language and Top Links.
 
+NEW! - Mobile menu.
+
 
 Roadmap
 =======
-
-Mobile menu.
 
 Orbit Slider.
 
