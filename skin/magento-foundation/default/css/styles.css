@@ -521,7 +521,7 @@ button.btn-cart:hover, .btn-remove:hover:before, .arrow-up:hover:before, .arrow-
 }
 
 .error-msg { background-color: #C60F13; }
-.error-msg:before { content: "\f006"; color:#fff; }
+.error-msg:before { content: "\f006"; color:#fff; float: left; }
 .success-msg { background-color: #5DA423; }
 .success-msg:before { content: "\f005"; color:#fff; float: left; }
 .note-msg, .notice-msg { background-color: #2BA6CB;  }
@@ -1298,6 +1298,8 @@ caption,th,td { vertical-align:top; text-align:left; font-weight:normal; }
 .cart .page-title .checkout-types li { margin:0 0 5px; }
 .cart .title-buttons .checkout-types {  float: right; top: 0; z-index: 10; }
 .cart .title-buttons .checkout-types li { float:left; margin:0; }
+
+.cart .checkout-types .btn-proceed-checkout{z-index:999; }
 
 /* Shopping Cart Collateral boxes */
 .cart .cart-collaterals { padding:15px 0 0; }
