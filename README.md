@@ -32,7 +32,7 @@ Cart, Checkout and Customer account.
 
 Left and Right Off-canvas sidebar columns.
 
-Top Nav with mini-cart hides Search, Language and Top Links.
+Top Nav with mini-cart.
 
 NEW! - Mobile menu.
 
