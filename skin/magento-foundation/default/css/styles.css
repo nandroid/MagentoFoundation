@@ -1214,7 +1214,7 @@ form#login-form { margin:0; }
 
 .link-cart, .link-wishlist, .link-reorder, .link-compare, .link-print { font-weight: bold;  }
 
-.divider { clear:both; display:block; font-size:0; line-height:0; height:1px; margin:10px 0; background:url(../images/bkg_divider1.gif) 0 50% repeat-x; text-indent:-999em; overflow:hidden; border: 5px solid #f00; }
+.divider { clear:both; display:block; font-size:0; line-height:0; height:1px; margin:10px 0; text-indent:-999em; overflow:hidden; border: 5px solid #f00; }
 
 /* Form Validation */
 .validation-advice { font-weight:bold; line-height:1em; color: #C60F13; }
